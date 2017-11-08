@@ -16,5 +16,8 @@ Download and place within your command line binary path; i.e. the /usr/local/bin
 chmod +x tunnelopen
 ```
 
+### Changes
+November 8, 2017 - Added SMB support
+
 ### Roadmap
-I hope to add support for SMB, RDP, and other operating systems.
+I hope to have additional support for RDP, and other operating systems.
