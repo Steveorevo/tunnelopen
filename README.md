@@ -17,4 +17,4 @@ chmod +x tunnelopen
 ```
 
 ### Roadmap
-I hope to add support for SMB, and other features.
+I hope to add support for SMB, RDP, and other operating systems.
