@@ -1,13 +1,12 @@
 #!/usr/bin/perl
 
-
 #
 # Changes
 # November 8, 2017, Stephen J. Carnam - Added SMB support, MIT License
 #
 
 #
-# Copyright 2008 Thomas A. Fine
+# Copyright © 2008 Thomas A. Fine
 #
 # Redistribution is permitted, in whole or in part, for commercial and
 # non-commercial purposes, provided only that this copyright notice
@@ -118,6 +117,9 @@ if ($service eq "vnc") {
 } elsif ($service eq "https") {
   if ($port>0) { $remoteport=$port; }
   else { $remoteport=443; }
+} elsif ($service eq "smb") {
+  if ($port>0) { $remoteport=$port; }
+  else { $remoteport=445; }
 } else {
   print STDERR "Unknown (to this script) service: $service\n";
   exit(-1);
@@ -161,7 +163,7 @@ system("open $service://$servuser$localhost:$localport/$path");
 sub usage {
   print <<EEE;
 Usage: $0 [options] URL
-  URL  - currently this can only be vnc, afp, http, or https
+  URL  - currently this can only be vnc, afp, smb, http, or https
   Options are:
   -s/--shared             sets up a connection that all local computers
                           can access (may be VERY insecure if your
